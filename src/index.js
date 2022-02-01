@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import CommentDetails from "./CommentDetail";
+import WrapCard from "./Card";
+import ApprovalCard from "./ApprovalCard";
+function App() {
+  return (
+    <div className="ui container comments">
+      <WrapCard
+        author="Shaurya"
+        time="6pm"
+        comment="Thats one hell of a post"
+      />
+      <WrapCard author="Shubhi" time="1pm" comment="WOW! I am  pam btw!" />
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+      <WrapCard author="Tanya" time="4pm" comment="I am monica!" />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <WrapCard comment="Will you be my friend" />
+
+      <ApprovalCard>
+        <div>Will u be my friennnnnnddddd?</div>
+      </ApprovalCard>
+
+      <ApprovalCard>
+        <CommentDetails author="Vishnu" comment="fuck yes!" time="2pm" />
+      </ApprovalCard>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.querySelector("#root"));
